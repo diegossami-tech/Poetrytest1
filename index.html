@@ -2,11 +2,44 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Meu Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Site com Menu Hambúrguer</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <h1>Bem-vindo ao meu site!</h1>
+  <!-- Menu Hambúrguer -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+  <nav class="sidebar">
+    <ul>
+      <li><a href="#" onclick="showHome()"><i class="fas fa-home"></i> Home</a></li>
+      <!-- Títulos das pastas serão adicionados dinamicamente aqui -->
+    </ul>
+  </nav>
+
+  <!-- Página Inicial -->
+  <div class="container">
+    <h1>Meu Site</h1>
+    
+    <!-- Formulário para adicionar pastas e textos -->
+    <div class="form-container">
+      <h2>Adicionar Conteúdo</h2>
+      <form id="contentForm">
+        <input type="text" id="folderName" placeholder="Nome da Pasta" required>
+        <input type="text" id="textTitle" placeholder="Título do Texto" required>
+        <textarea id="textContent" placeholder="Digite o texto" required></textarea>
+        <button type="submit">Adicionar</button>
+      </form>
+    </div>
+
+    <!-- Área para exibir pastas e textos -->
+    <div id="contentDisplay">
+      <!-- Pastas e textos serão adicionados dinamicamente aqui -->
+    </div>
+  </div>
+
   <script src="app.js"></script>
 </body>
 </html>
